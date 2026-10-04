@@ -1,4 +1,72 @@
 package org.example.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "farms")
 public class Farm {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String farmName;
+
+    private String location;
+
+    private Double area;
+
+    private String soilType;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getFarmName() {
+        return farmName;
+    }
+
+    public void setFarmName(String farmName) {
+        this.farmName = farmName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public Double getArea() {
+        return area;
+    }
+
+    public void setArea(Double area) {
+        this.area = area;
+    }
+
+    public String getSoilType() {
+        return soilType;
+    }
+
+    public void setSoilType(String soilType) {
+        this.soilType = soilType;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

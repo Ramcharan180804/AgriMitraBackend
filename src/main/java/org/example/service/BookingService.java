@@ -1,7 +1,7 @@
 package org.example.service;
 
-import com.agrimitra.entity.Booking;
-import com.agrimitra.repository.BookingRepository;
+import org.example.entity.Booking;
+import org.example.repository.BookingRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
